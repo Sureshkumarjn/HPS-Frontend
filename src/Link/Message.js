@@ -38,6 +38,7 @@ function Message() {
   };
   return (
     <>
+      <Header />
       <section className="home-section">
         <div className="content-page">
           <div className="content">

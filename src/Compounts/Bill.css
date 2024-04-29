@@ -33,7 +33,7 @@ h1 {
     border: 0.5px solid orange;
 } */
 
-input {
+.input {
   margin: 10px;
   border: 0.5px solid rgb(34, 131, 200);
   height: 50px;
@@ -43,5 +43,4 @@ input {
 }
 #b1 {
   margin-right: 5px;
-
 }

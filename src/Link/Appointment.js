@@ -3,6 +3,7 @@ import Footer from '../Compounts/Footer';
 import axios from 'axios';
 import { toast,ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Header from '../Compounts/Header.js';
  function Appointment() {
   const {BASE_URL} =require ('../config.js');
 
@@ -129,110 +130,139 @@ import 'react-toastify/dist/ReactToastify.css';
 */
   return (
     <>
- 
-   <section className="home-section">
-      <div className="content-page">
-      <div className="content">
-        <div className="container-fluid">
-          <div className="row">
-           
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <div className="card fade-up">
-                <div className="card-body">
-                <div className='row'>
-                    <div className='col-md-10 '>
-                        <h4 className="header-title">Add Appointment</h4>
-                       
-                     </div>
-                     <div className='col-md-2 '>
-                     </div>
-                    
-                </div>
-                  <hr/>
-                  <div>
-      
-      <div className='form-row'>
-        <div className="form-group col-md-6">
-          <label for="inputAddress" className="form-label">Id</label>
-          <input type="text" className="form-control" value={newData.id} onChange={(e) => setNewData({ ...newData, id: e.target.value })} placeholder='Patient No' />
-        </div>
-        <div className="form-group col-md-6">
-           <label for="inputAddress" className="form-label">Time</label>
-           <input type="time"  className="form-control"   value={newData.age} onChange={(e) => setNewData({ ...newData, age: e.target.value })} />
-        </div>
-      </div>
-      <div className='form-row'>
-        
-        <div className="form-group col-md-12">
-           <label for="inputAddress" className="form-label">Name</label>
+      <Header />
+      <section className="home-section">
+        <div className="content-page">
+          <div className="content">
+            <div className="container-fluid">
+              <div className="row"></div>
+              <div className="row">
+                <div className="col-12">
+                  <div className="card fade-up">
+                    <div className="card-body">
+                      <div className="row">
+                        <div className="col-md-10 ">
+                          <h4 className="header-title">Add Appointment</h4>
+                        </div>
+                        <div className="col-md-2 "></div>
+                      </div>
+                      <hr />
+                      <div>
+                        <div className="form-row">
+                          <div className="form-group col-md-6">
+                            <label for="inputAddress" className="form-label">
+                              Id
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              value={newData.id}
+                              onChange={(e) =>
+                                setNewData({ ...newData, id: e.target.value })
+                              }
+                              placeholder="Patient No"
+                            />
+                          </div>
+                          <div className="form-group col-md-6">
+                            <label for="inputAddress" className="form-label">
+                              Time
+                            </label>
+                            <input
+                              type="time"
+                              className="form-control"
+                              value={newData.age}
+                              onChange={(e) =>
+                                setNewData({ ...newData, age: e.target.value })
+                              }
+                            />
+                          </div>
+                        </div>
+                        <div className="form-row">
+                          <div className="form-group col-md-12">
+                            <label for="inputAddress" className="form-label">
+                              Name
+                            </label>
 
-            <input type="text" className="form-control" value={newData.name} onChange={(e) => setNewData({ ...newData, name: e.target.value })} placeholder='Patient Name' />
+                            <input
+                              type="text"
+                              className="form-control"
+                              value={newData.name}
+                              onChange={(e) =>
+                                setNewData({ ...newData, name: e.target.value })
+                              }
+                              placeholder="Patient Name"
+                            />
+                          </div>
+                        </div>
+                        <div className="form-row">
+                          <div className="form-group col-md-3">
+                            <button
+                              type="submit"
+                              name="add_Appointment"
+                              className="ladda-button btn btn-primary mb-2 mt-3"
+                              data-style="expand-right"
+                              onClick={handleInsertData}
+                            >
+                              Add Appointment
+                            </button>
+                          </div>
+                        </div>
 
-        </div>
-      </div>
-      <div className='form-row'>
-          <div className='form-group col-md-3'>
-              <button type="submit" name="add_Appointment" className="ladda-button btn btn-primary mb-2 mt-3" data-style="expand-right" onClick={handleInsertData}>Add Appointment</button>
+                        <div className="form-row">
+                          <div className="form-group col-md-12">
+                            <h4 className="header-title">
+                              Today's Appointments
+                            </h4>
+                          </div>
 
-          </div>
-       </div>
-      
-     
-      <div className='form-row'>
-        <div className="form-group col-md-12">
-            <h4 className="header-title">Today's Appointments</h4>
-        </div>
-       
-        <table className='table table-striped'>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Time</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {todayData.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.age}</td>
-                <td>{item.date}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div  className='form-row'>
-       <div className="form-group col-md-12">
-            <h4 className="header-title">All Data</h4>
-        </div>
-        <table className='table table-striped'>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Time</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.age}</td>
-                <td>{item.date}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-                {/*
+                          <table className="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Time</th>
+                                <th>Date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {todayData.map((item) => (
+                                <tr key={item.id}>
+                                  <td>{item.id}</td>
+                                  <td>{item.name}</td>
+                                  <td>{item.age}</td>
+                                  <td>{item.date}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                        <div className="form-row">
+                          <div className="form-group col-md-12">
+                            <h4 className="header-title">All Data</h4>
+                          </div>
+                          <table className="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Time</th>
+                                <th>Date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {data.map((item) => (
+                                <tr key={item.id}>
+                                  <td>{item.id}</td>
+                                  <td>{item.name}</td>
+                                  <td>{item.age}</td>
+                                  <td>{item.date}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      {/*
                 <form>
                   <div className="form-row">
                             <div className="form-group col-md-6">
@@ -286,19 +316,17 @@ import 'react-toastify/dist/ReactToastify.css';
                 </table>
              
                   </form>
-                 */} 
-                  
+                 */}
+                    </div>
+                  </div>
                 </div>
+                <Footer />
               </div>
-            </div><Footer/>
+            </div>
           </div>
         </div>
-      </div>
-     
-    </div>
-    
-    </section>  
+      </section>
     </>
-  )
+  );
 }
 export default  Appointment;

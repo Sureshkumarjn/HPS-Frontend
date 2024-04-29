@@ -180,7 +180,10 @@ function PdfTemplate(props) {
 
       <ReactPrint
         trigger={() => (
-          <button className="ladda-button btn btn-primary mb-2 mt-3  fade-down" id="b1">
+          <button
+            className="ladda-button btn btn-primary mb-2 mt-3  fade-down"
+            id="b1"
+          >
             Print
           </button>
         )}
@@ -211,6 +214,7 @@ function PdfTemplate(props) {
           <div className="container">
             <div className="forms">
               <input
+                className="input"
                 type="text"
                 value={Item}
                 onChange={(e) => setItem(e.target.value)}
@@ -218,6 +222,7 @@ function PdfTemplate(props) {
               />
               <input
                 type="text"
+                className="input"
                 value={Amount}
                 onChange={(e) => setAmount(e.target.value)}
                 placeholder="Amount ₹"

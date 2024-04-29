@@ -1,0 +1,35 @@
+.login-w {
+  background-color: aliceblue;
+  height: 500px;
+  width: 1000px;
+  margin-left: 100px;
+}
+.button {
+  margin-left: 100px;
+}
+.input {
+  margin: 15px;
+  border: 0.5px solid rgb(34, 131, 200);
+  height: 50px;
+  width: 250px;
+  text-indent: 10px;
+  border-radius: 5px;
+}
+.link {
+  text-align: center;
+}
+.lab {
+  margin-left: -20px;
+}
+.login-wrap .icon {
+  width: 80px;
+  height: 80px;
+  background: #1089ff;
+  border-radius: 50%;
+  font-size: 30px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.login-wrap .icon span {
+  color: #fff;
+}

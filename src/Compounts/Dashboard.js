@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PdfTemplate from "./PDF/Template";
+import Header from "./Header.js";
 const Dashboard = () => {
   const { BASE_URL } = require("../config.js");
 
@@ -138,6 +139,7 @@ const Dashboard = () => {
   };
   return (
     <>
+      <Header />
       <section className="home-section">
         <div className="container">
           <div className="text">Dashboard</div>
